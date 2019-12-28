@@ -610,6 +610,72 @@ even_filtered = [even for even in filter(lambda u: u % 2 == 0, [1, 2, 3, 4, 5, 6
 squared_even = [square for square in map(lambda m: m**2, even_filtered)]
 
 
+# ####################################################
+# QUESTION 36
+# Define a class named American which has a static method called printNationality.
+
+class American:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def printNationality():
+        print("I am an American")
 
 
+American.printNationality() # or
+AM = American()
+AM.printNationality()
 
+
+# ####################################################
+# QUESTION 37
+# Define a class named American and its subclass NewYorker.
+
+class American:
+    def __init__(self):
+        pass
+
+
+class NewYorker(American):
+    def __init__(self):
+        super.__init__(American)
+
+
+# ####################################################
+# QUESTION 38
+# Define a class named Circle which can be constructed by a radius. The Circle class
+# has a method which can compute the area.
+from math import pi
+
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def calArea(self):
+        area = round(pi * self.radius ** 2, 2)
+        print(f"The area of a circle with radius, {self.radius} = {area}")
+
+
+cir = Circle(5)
+cir.calArea()
+
+
+# ####################################################
+# QUESTION 38
+# Define a class named Rectangle which can be constructed by a length and width.
+# The Rectangle class has a method which can compute the area.
+
+class Rectangle:
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+
+    def calArea(self):
+        area = self.length * self.breadth
+        print(f"The area of a rectangle with length, {self.length} and breadth, {self.breadth} = {area}")
+
+
+rec = Rectangle(4, 8)
+rec.calArea()
