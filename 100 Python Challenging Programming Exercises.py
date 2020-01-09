@@ -5,7 +5,7 @@
 
 finalList = []
 for num in range(2000, 3200+1):
-    if num % 7 == 0 and num%5 != 0:
+    if num % 7 == 0 and num % 5 != 0:
         finalList.append(num)
 for i in finalList:
     print(i, end=',')
@@ -513,7 +513,6 @@ for i in range(100):
     print(i, ':', fib(i))
 
 
-
 # ##################################################
 # QUESTION 32
 # Create a function to print the nth term of a fibonacci sequence using recursion, and
@@ -679,3 +678,33 @@ class Rectangle:
 
 rec = Rectangle(4, 8)
 rec.calArea()
+
+
+# ####################################################
+# QUESTION 38
+# Define a class named Shape and its subclass Square.
+# The Square class has an init function which takes a length as argument.
+# Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+
+class Shape:
+    def __init__(self):
+        pass
+
+    def area(self):
+        area = 0
+        print(f"Shape's area = {area}")
+
+
+class Square(Shape):
+    def __init__(self, length):
+        super().__init__()
+        self.length = length
+
+    def area(self):
+        area = self.length ** 2
+        print(f"Area of square with side {self.length} = {area}")
+
+
+sq = Square(6)
+sq.area()
