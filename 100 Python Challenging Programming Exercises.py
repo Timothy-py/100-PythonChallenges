@@ -765,7 +765,7 @@ class NameFinder:
     def __init__(self):
         self.email = input("Enter your email here : ")
 
-    def check_email(self):
+    def validate_email(self):
         self.email_regex = re.compile(pattern=r"([A-Za-z]+)(@)([A-Za-z]+)(\.com)")
         if self.email_regex.match(self.email):
             return True
@@ -773,7 +773,7 @@ class NameFinder:
             return False
 
     def name_xtractor(self):
-        if self.check_email():
+        if self.validate_email():
             name = self.email_regex.search(self.email).group(1)
             print(f"Name = {name}")
         else:
@@ -782,3 +782,31 @@ class NameFinder:
 
 name = NameFinder()
 name.name_xtractor()
+
+
+####################################################
+# QUESTION 42
+# Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only.
+# Example: If the following words is given as input to the program: 2 cats and 3 dogs.
+# Then, the output of the program should be: ['2', '3']
+# In case of input data being supplied to the question, it should be assumed to be a console input.
+
+words = input("Enter your words here : ")
+
+digits = []
+
+for i in words:
+    if i.isdigit():
+        digits.append(i)
+
+if digits:
+    print(digits)
+else:
+    print("No digit found!")
+# ****************OR*******************
+import re
+words = input("Enter your words here : ")
+
+num_regex = re.compile(pattern=r"[0-9]")
+match_obj = num_regex.findall(words)
+print(match_obj)
