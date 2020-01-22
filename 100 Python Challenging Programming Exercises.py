@@ -533,51 +533,6 @@ for i in range(100):
     print(i, ':', fib(i))
 
 
-# ######################################################
-# Listen to this story, a boy and his father, a programmer are playing with wooden blocks.
-# They a're building a pyramid, their pyramid is a bit weird, as it's actually a pyramid-shaped
-# wall -  it's flat. The pyramid is stacked according to one simple principle, each lower layer
-# contains one block more than the layer above.
-# Your task is to write a program which reads the number of blocks the builders have, and outputs
-# the  height of the pyramid that can be built using these blocks.
-# NOTE: The height is measured by the number of fully completed layers - if the builders doesn't
-# have a sufficient number of blocks and cannot complete the next layer, they finish their work immediately.
-import math
-
-
-# def pyrabuilder(num_of_blocks):
-#     num_sequence = []
-#     pyramid = []
-#     for num in range(1, num_of_blocks+1):
-#         num_sequence.append(num)
-#     print(num_sequence)
-#
-#     mid_num = math.floor(num_of_blocks/2)
-#     print(mid_num)
-#
-#     # pyramid.append(num_sequence[mid_num])
-#     for i in range(mid_num):
-#         if sum(pyramid )
-#         pyramid.append(i)
-#
-#     print(pyramid)
-#     print(sum(pyramid))
-
-# def pyrabuilder(no_of_blocks):
-#     pyramid = []
-#     for num in range(1, no_of_blocks):
-#         if sum(pyramid) == no_of_blocks:
-#             print(pyramid)
-#             print(sum(pyramid))
-#         elif sum(pyramid) > no_of_blocks:
-#             print(pyramid)
-#             print(sum(pyramid))
-#         elif sum(pyramid) < no_of_blocks:
-#             pyramid.append(num)
-#
-#
-# pyrabuilder(9)
-
 
 # ######################################################
 # QUESTION 33
@@ -662,7 +617,7 @@ cir.calArea()
 
 
 # ####################################################
-# QUESTION 38
+# QUESTION 39
 # Define a class named Rectangle which can be constructed by a length and width.
 # The Rectangle class has a method which can compute the area.
 
@@ -681,7 +636,7 @@ rec.calArea()
 
 
 # ####################################################
-# QUESTION 38
+# QUESTION 40
 # Define a class named Shape and its subclass Square.
 # The Square class has an init function which takes a length as argument.
 # Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
@@ -711,14 +666,14 @@ sq.area()
 
 
 ####################################################
-# QUESTION 38
+# QUESTION 41
 # Pleas raise a RuntimeError exception.
 
 raise RuntimeError("something is fishy")
 
 
 ####################################################
-# QUESTION 39
+# QUESTION 42
 # Write a function to compute 5/0 and use try/except to catch the exceptions.
 
 def divider():
@@ -736,7 +691,7 @@ finally:
 
 
 ####################################################
-# QUESTION 40
+# QUESTION 43
 # Define a custom exception class which takes a string message as attribute.
 
 class Xception(Exception):
@@ -750,7 +705,7 @@ class Xception(Exception):
 
 
 ####################################################
-# QUESTION 41
+# QUESTION 44
 # Assuming that we have some email addresses in the "username@companyname.com" format,
 # please write program to print the user name of a given email address.
 # Both user names and company names are composed of letters only.
@@ -785,7 +740,7 @@ name.name_xtractor()
 
 
 ####################################################
-# QUESTION 42
+# QUESTION 45
 # Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only.
 # Example: If the following words is given as input to the program: 2 cats and 3 dogs.
 # Then, the output of the program should be: ['2', '3']
@@ -810,3 +765,54 @@ words = input("Enter your words here : ")
 num_regex = re.compile(pattern=r"[0-9]")
 match_obj = num_regex.findall(words)
 print(match_obj)
+
+
+# ###########################################################
+# QUESTION 46
+# Listen to this story, a boy and his father, a programmer are playing with wooden blocks.
+# They a're building a pyramid, their pyramid is a bit weird, as it's actually a pyramid-shaped
+# wall -  it's flat. The pyramid is stacked according to one simple principle, each lower layer
+# contains one block more than the layer above.
+# Your task is to write a program which reads the number of blocks the builders have, and outputs
+# the  height of the pyramid that can be built using these blocks.
+# NOTE: The height is measured by the number of fully completed layers - if the builders doesn't
+# have a sufficient number of blocks and cannot complete the next layer, they finish their work immediately.
+import math
+
+
+def pyrabuilder(blocks):
+
+    init_pyramid = []
+    final_pyramid = []
+
+    mid_num = math.ceil(blocks/2)
+    list_mid_num = [i for i in range(1, mid_num+1)]
+
+    for num in list_mid_num:
+        init_pyramid.append(num)
+        if sum(init_pyramid) == blocks:
+            break
+        elif sum(init_pyramid) > blocks:
+            break
+        else:
+            continue
+
+    size = len(init_pyramid)+1
+    for i in range(1, size):
+        final_pyramid.append(init_pyramid.pop())
+
+        if sum(final_pyramid) == blocks:
+            print(f"Pyramid = {final_pyramid} \nHeight = {len(final_pyramid)}")
+            for i in final_pyramid:
+                print("*" * i)
+            break
+        elif sum(final_pyramid) > blocks:
+            print(f"Pyramid = {final_pyramid[:-1]} \nHeight = {len(final_pyramid)-1}")
+            for i in final_pyramid[:-1]:
+                print("*" * i)
+            break
+        else:
+            continue
+
+
+pyrabuilder(100)
