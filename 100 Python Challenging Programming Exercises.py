@@ -509,6 +509,7 @@ def fib(n):
 
     return value
 
+
 for i in range(100):
     print(i, ':', fib(i))
 
@@ -531,7 +532,6 @@ def fib(n):
 
 for i in range(100):
     print(i, ':', fib(i))
-
 
 
 # ######################################################
@@ -780,7 +780,7 @@ print(match_obj)
 import math
 
 
-def pyrabuilder(blocks):
+def pyrabuilder(blocks=int(input("Enter the number of blocks you have : "))):
 
     init_pyramid = []
     final_pyramid = []
@@ -815,7 +815,7 @@ def pyrabuilder(blocks):
             continue
 
 
-pyrabuilder(100)
+pyrabuilder()
 
 
 # ###########################################################
@@ -845,3 +845,22 @@ def formula(n):
 
 
 formula(5)
+
+
+# ###########################################################
+# QUESTION 48
+# Write a program to compute: f(n)=f(n-1)+100 when n>0 and f(0)=1 with a given n input by console (n>0).
+# Example: If the following n is given as input to the program: 5 Then, the output of the program should be: 500
+
+
+def formular(n=int(input("Enter number here : "))):
+
+    if n == 0:
+        value = 1
+        return value
+    elif n > 0:
+        value = formular(n-1) + 100
+        return value
+
+
+print(formular())
