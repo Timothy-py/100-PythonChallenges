@@ -364,6 +364,7 @@ for text in parsed_text:
 # QUESTION 23
 # Write a method which can calculate square value of number
 
+
 class Square:
     def square(number):
         print(number**2)
@@ -758,7 +759,9 @@ if digits:
     print(digits)
 else:
     print("No digit found!")
+
 # ****************OR*******************
+
 import re
 words = input("Enter your words here : ")
 
@@ -864,3 +867,39 @@ def formular(n=int(input("Enter number here : "))):
 
 
 print(formular())
+
+
+# ###########################################################
+# QUESTION 49
+# The Fibonacci Sequence is completed based on the following formula:
+# f(n) = 0 if n=0
+# f(n) = 1 if n=1
+# f(n) = f(n-1) + f(n-2) if n>1
+# Please write a program to compute the value of f(n) with a given n input by console.
+# If n=7 is given as input to the program: Then, the output should be: 13
+
+def formulae(n=int(input("Enter number here: "))):
+
+    if n == 0:
+        value = 0
+        return value
+    elif n == 1:
+        value = 1
+        return value
+    elif n >= 2:
+        value = formulae(n-1) + formulae(n-2)
+        return value
+
+
+formulae(7)
+
+
+# ###########################################################
+# QUESTION **
+# Given array {2,4,6,10}
+# target say (16)
+# Find the number of possible subsets that will sum up to the target.
+# Assumptions: i. all elements inside the array is non-negative.
+# ii. You cannot repeat number.
+# iii. if 0 is given as the target, the possible subset is 1 i.e {}.
+
