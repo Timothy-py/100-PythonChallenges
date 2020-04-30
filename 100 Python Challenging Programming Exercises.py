@@ -742,7 +742,8 @@ name.name_xtractor()
 
 ####################################################
 # QUESTION 45
-# Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only.
+# Write a program which accepts a sequence of words separated by whitespace as input to
+# print the words composed of digits only.
 # Example: If the following words is given as input to the program: 2 cats and 3 dogs.
 # Then, the output of the program should be: ['2', '3']
 # In case of input data being supplied to the question, it should be assumed to be a console input.
@@ -1035,3 +1036,16 @@ print(",".join(values))
 
 for num in [2, 4, 6, 8]:
     assert num % 2 == 0, f"{num} is not an even number bro!"
+
+
+# ##########################################################
+# QUESTION 55
+# Please write a program which accepts basic mathematics expression from console and print the evaluation result.
+# Example: If the following string is given as input to the program: 35+3
+# Then, the output of the program should be: 38
+
+def evaluator(n=input("Enter expression to evaluate here : ")):
+    print(eval(n))
+
+
+evaluator()
