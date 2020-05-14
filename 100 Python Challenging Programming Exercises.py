@@ -1085,3 +1085,12 @@ def bin_search(first_elm=0, last_elm=len(list_input) - 1, list_input=list_input,
 
 
 bin_search()
+
+
+# ##########################################################
+# QUESTION 57
+# Please generate a random float where the value is between 10 and 100 using Python math module.
+
+from random import random
+
+print(f"{random()*100:.5f}")
