@@ -1091,6 +1091,16 @@ bin_search()
 # QUESTION 57
 # Please generate a random float where the value is between 10 and 100 using Python math module.
 
-from random import random
+import random
 
-print(f"{random()*100:.5f}")
+print(f"{random.random()*100:.5f}")
+
+
+# ##########################################################
+# QUESTION 58
+# Please write a program to output a random even number between 0 and 10 inclusive using random module
+# and list comprehension.
+
+import random
+
+print(random.choice([i for i in range(0, 11) if i % 2 == 0]))
