@@ -1114,3 +1114,16 @@ import random
 
 five_rands = [random.randint(100, 201) for i in range(5)]
 print(five_rands)
+# OR
+five_rands = random.sample(range(100, 200), 5)
+
+
+# ##########################################################
+# QUESTION 60
+# Write a program to shuffle and print a list.
+
+from random import shuffle
+
+meal = ['rice', 'yam', 'beans', 'bread', 'potato']
+shuffle(meal)
+print(shuffle)
