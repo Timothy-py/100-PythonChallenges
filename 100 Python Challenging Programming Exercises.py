@@ -3,6 +3,14 @@
 # A program which will find all such numbers which are divisible by 7 but are not a multiple of 5,
 # between 2000 and 3200 (both included).
 
+from random import shuffle
+import random
+import math
+import re
+from math import pi
+from functools import lru_cache
+from operator import itemgetter
+from math import sqrt
 finalList = []
 for num in range(2000, 3200+1):
     if num % 7 == 0 and num % 5 != 0:
@@ -58,13 +66,13 @@ print(list, tuple(list))
 
 
 class String:
-    # def __init__(self):
-    #     self.string = ''
+    def __init__(self):
+        self.string = ''
 
-    def getString(self):
+    def get_string(self):
         self.string = input('Enter a string here: ')
 
-    def printString(self):
+    def print_string(self):
         print(self.string.upper())
 
 
@@ -79,7 +87,6 @@ x.printString()
 # Following are the fixed values of C and H: C is 50. H is 30.
 # D is the variable whose values should be input to your program in a comma-separated sequence.
 
-from math import sqrt
 C, H, D = 50, 30, input('enter a comma-separated value here : ')
 D = D.split(',')
 print(D)
@@ -260,7 +267,6 @@ ABd1234@1
 # Then, the output of the program should be:
 # [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
 
-from operator import itemgetter
 output_list = []
 while True:
     data = input('Enter a comma-separated data input here : ')
@@ -271,11 +277,13 @@ while True:
         data_split_tuple = tuple(data.split(','))
         output_list.append(data_split_tuple)
 
-print(sorted(output_list, key=itemgetter(0, 1, 2)))     # or just print(sorted(output_list))
+# or just print(sorted(output_list))
+print(sorted(output_list, key=itemgetter(0, 1, 2)))
 
 # ###############################################
 # QUESTION 19
 # Write a function to reverse a given string
+
 
 def rev_str(str):
     n = -1
@@ -283,13 +291,16 @@ def rev_str(str):
         print(str[n])
         n -= 1
 
+
 a = rev_str('timothy')
 
 #         ############## OR ##############
 
+
 def rev_str(my_str):
     for i in range(len(my_str)-1, -1, -1):
-         print(my_str[i])
+        print(my_str[i])
+
 
 a = rev_str('timothy')
 
@@ -304,6 +315,7 @@ def generator(n):
 
         if i % 7 == 0:
             yield i
+
 
 for i in generator(50):
     print(i)
@@ -322,7 +334,6 @@ for i in generator(50):
 # RIGHT 2
 # Then, the output of the program should be: 2
 
-from math import sqrt
 
 up = float(input('UP = '))
 down = float(input('DOWN = '))
@@ -369,6 +380,7 @@ class Square:
     def square(number):
         print(number**2)
 
+
 Square.square(6)
 
 # ###################################################
@@ -406,8 +418,10 @@ Square.square(6)
 # QUESTION 25
 # Define a function that can convert an integer into a string and print it in console.
 
+
 def converter(integer):
     return str(integer)
+
 
 conv = converter(3)
 print(conv)
@@ -416,6 +430,7 @@ print(conv)
 # QUESTION 26
 # Define a function that can receive two integral numbers in string form and
 # compute their sum and then print it in console.
+
 
 def func(int1, int2):
     return int(int1) + int(int2)
@@ -519,7 +534,7 @@ for i in range(100):
 # QUESTION 32
 # Create a function to print the nth term of a fibonacci sequence using recursion, and
 # also use lru_cache to cache the result.
-from functools import lru_cache
+
 
 @lru_cache(258)
 def fib(n):
@@ -560,7 +575,8 @@ print(next(square, default="Stop bro!"))
 # Write a program which can map() and filter() to make a list whose elements are square of
 # even number in [1,2,3,4,5,6,7,8,9,10].
 
-even_filtered = [even for even in filter(lambda u: u % 2 == 0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])]
+even_filtered = [even for even in filter(
+    lambda u: u % 2 == 0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])]
 
 squared_even = [square for square in map(lambda m: m**2, even_filtered)]
 
@@ -578,7 +594,7 @@ class American:
         print("I am an American")
 
 
-American.printNationality() # or
+American.printNationality()  # or
 AM = American()
 AM.printNationality()
 
@@ -601,7 +617,6 @@ class NewYorker(American):
 # QUESTION 38
 # Define a class named Circle which can be constructed by a radius. The Circle class
 # has a method which can compute the area.
-from math import pi
 
 
 class Circle:
@@ -629,7 +644,8 @@ class Rectangle:
 
     def calArea(self):
         area = self.length * self.breadth
-        print(f"The area of a rectangle with length, {self.length} and breadth, {self.breadth} = {area}")
+        print(
+            f"The area of a rectangle with length, {self.length} and breadth, {self.breadth} = {area}")
 
 
 rec = Rectangle(4, 8)
@@ -714,7 +730,6 @@ class Xception(Exception):
 # john@google.com
 # Then, the output of the program should be: john
 # In case of input data being supplied to the question, it should be assumed to be a console input.
-import re
 
 
 class NameFinder:
@@ -722,7 +737,8 @@ class NameFinder:
         self.email = input("Enter your email here : ")
 
     def validate_email(self):
-        self.email_regex = re.compile(pattern=r"([A-Za-z]+)(@)([A-Za-z]+)(\.com)")
+        self.email_regex = re.compile(
+            pattern=r"([A-Za-z]+)(@)([A-Za-z]+)(\.com)")
         if self.email_regex.match(self.email):
             return True
         else:
@@ -763,7 +779,6 @@ else:
 
 # ****************OR*******************
 
-import re
 words = input("Enter your words here : ")
 
 num_regex = re.compile(pattern=r"[0-9]")
@@ -781,7 +796,6 @@ print(match_obj)
 # the  height of the pyramid that can be built using these blocks.
 # NOTE: The height is measured by the number of fully completed layers - if the builders doesn't
 # have a sufficient number of blocks and cannot complete the next layer, they finish their work immediately.
-import math
 
 
 def pyrabuilder(blocks=int(input("Enter the number of blocks you have : "))):
@@ -811,7 +825,8 @@ def pyrabuilder(blocks=int(input("Enter the number of blocks you have : "))):
                 print("*" * i)
             break
         elif sum(final_pyramid) > blocks:
-            print(f"Pyramid = {final_pyramid[:-1]} \nHeight = {len(final_pyramid)-1}")
+            print(
+                f"Pyramid = {final_pyramid[:-1]} \nHeight = {len(final_pyramid)-1}")
             for i in final_pyramid[:-1]:
                 print("*" * i)
             break
@@ -840,6 +855,7 @@ def formula(n):
         print("Value must be greater than 0")
 
 # *******************OR*******************
+
 
 def formula(n):
     result = 0
@@ -1091,7 +1107,6 @@ bin_search()
 # QUESTION 57
 # Please generate a random float where the value is between 10 and 100 using Python math module.
 
-import random
 
 print(f"{random.random()*100:.5f}")
 
@@ -1101,7 +1116,6 @@ print(f"{random.random()*100:.5f}")
 # Please write a program to output a random even number between 0 and 10 inclusive using random module
 # and list comprehension.
 
-import random
 
 print(random.choice([i for i in range(0, 11) if i % 2 == 0]))
 
@@ -1110,7 +1124,6 @@ print(random.choice([i for i in range(0, 11) if i % 2 == 0]))
 # QUESTION 59
 # Please write a program to generate a list with 5 random numbers between 100 and 200 inclusive.
 
-import random
 
 five_rands = [random.randint(100, 201) for i in range(5)]
 print(five_rands)
@@ -1122,8 +1135,26 @@ five_rands = random.sample(range(100, 200), 5)
 # QUESTION 60
 # Write a program to shuffle and print a list.
 
-from random import shuffle
 
 meal = ['rice', 'yam', 'beans', 'bread', 'potato']
 shuffle(meal)
 print(shuffle)
+
+
+# ########################################################################
+# QUESTION 61
+# Have the function StringChallenge(str) read str which will contain two strings separated by a space.
+# The first string will consist of the following sets of characters: +, *, $, and {N} which is optional.
+# The plus (+) character represents a single alphabetic character, the ($) character represents a number between 1-9,
+# and the asterisk (*) represents a sequence of the same character of length 3 unless it is followed by {N}
+# which represents how many characters should appear in the sequence where N will be at least 1.
+# Your goal is to determine if the second string exactly matches the pattern of the first string in the input.
+
+# For example: if str is "++*{5} jtggggg" then the second string in this case does match the pattern,
+# so your program should return the string true. If the second string does not match the pattern
+# your program should return the string false.
+# Examples
+# Input: "+++++* abcdehhhhhh"
+# Output: false
+# Input: "$**+*{2} 9mmmrrrkbb"
+# Output: true
