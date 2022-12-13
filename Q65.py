@@ -17,6 +17,7 @@
 
 # 6. The value of maxLength is the length of the longest substring without repeating characters.
 
+# debug this solution
 def longest_substring_without_repeating_characters(s):
     maxLength = 0
     start = 0
@@ -35,3 +36,19 @@ def longest_substring_without_repeating_characters(s):
 
 s = "abcabcbb"
 print(longest_substring_without_repeating_characters(s))  # Output: 3 ("abc")
+
+
+# correct solution
+def lengthOfLongestSubstring(self, s):
+    start = maxLength = 0
+    usedChar = {}
+
+    for i in range(len(s)):
+        if s[i] in usedChar and start <= usedChar[s[i]]:
+            start = usedChar[s[i]] + 1
+        else:
+            maxLength = max(maxLength, i - start + 1)
+
+        usedChar[s[i]] = i
+
+    return maxLength
