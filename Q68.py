@@ -41,6 +41,14 @@ def findMedianSortedArrays(nums1, nums2):
 
 
 # using merge sort algorithm
+
+# To find the median of two sorted arrays, you can use the following approach:
+
+# Merge the two arrays into a single sorted array using a merge sort algorithm.
+
+# Find the length of the merged array.
+
+# If the length of the merged array is odd, return the middle element.
 def findMedianSortedArrays(nums1, nums2):
     # Merge the two arrays into a single sorted array
     merged = []
