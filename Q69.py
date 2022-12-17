@@ -80,3 +80,27 @@ def preprocess(s):
 # This solution first preprocesses the input string by adding sentinel characters and delimiters between the characters. This is done to make it easier to handle even-length palindromes. It then initializes the center and right end of the palindrome, and considers every character in the preprocessed string. For each character, it finds its mirror position, expands the palindrome centered at the current position, and updates the center and right end of the palindrome if necessary. Finally, it finds the maximum length and the center of the longest palindrome, calculates the start and end indices of the longest palindromic substring, and returns the substring.
 
 # The time complexity of this algorithm is O(n) because we only consider each character in the preprocessed string once. This makes it much faster than the brute force approach, which has a time complexity of O(n^3).
+
+
+# WORKING SOLUTION
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        n = len(s)
+        max_len = 0
+        max_p = ""
+        for i in range(n):
+            for j in range(i, i + 2):
+                b = i
+                e = j
+                while b >= 0 and e < n and s[b] == s[e]:
+                    b -= 1
+                    e += 1
+                l = e - b - 1
+                if l > max_len:
+                    max_len = l
+                    max_p = s[b + 1: e]
+        return max_p
