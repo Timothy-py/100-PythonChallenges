@@ -3,6 +3,9 @@
 
 # SOLUTION
 
+from math import factorial
+
+
 def climb_staircase(n):
     if n == 1:
         return 1
@@ -16,3 +19,20 @@ def climb_staircase(n):
 # it returns the sum of the number of ways to reach n-1 steps and the number of ways to reach n-2 steps.
 # This is because the number of ways to reach the nth step is equal to the number of ways to reach the n-1th step and the n-2th step,
 # since you can either take 1 step or 2 steps at a time.
+
+
+def climbStairs(self, n):
+    """
+    :type n: int
+    :rtype: int
+    """
+    res = 0
+    two = n//2
+
+    for i in range(two+1):
+        t = i           # number of twos
+        o = n-t*2       # number of ones
+        res += factorial(t+o)/(factorial(t)*factorial(o)
+                               )     # (two+one)!/ (two!*one!)
+
+    return res
