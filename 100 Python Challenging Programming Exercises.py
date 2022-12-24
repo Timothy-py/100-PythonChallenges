@@ -1136,11 +1136,6 @@ five_rands = random.sample(range(100, 200), 5)
 # Write a program to shuffle and print a list.
 
 
-meal = ['rice', 'yam', 'beans', 'bread', 'potato']
-shuffle(meal)
-print(shuffle)
-
-
 # ########################################################################
 # QUESTION 61
 # Have the function StringChallenge(str) read str which will contain two strings separated by a space.
