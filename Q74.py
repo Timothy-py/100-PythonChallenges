@@ -17,4 +17,25 @@ def climbStairs(n):
     return res
 
 
+def climbStairs2(n):
+    # create an array to store the number of ways to reach each step
+    ways = [0] * (n + 1)
+
+    # base case: there is only one way to reach the first step
+    ways[0] = 1
+
+    # base case: there is only one way to reach the second step
+    ways[1] = 1
+
+    # iterate over the remaining steps
+    for i in range(2, n+1):
+        # the number of ways to reach the current step is equal to the
+        # number of ways to reach the previous step plus the number of
+        # ways to reach the step before that
+        ways[i] = ways[i-1] + ways[i-2]
+
+    # return the number of ways to reach the top step
+    return ways[n]
+
+
 print(climbStairs(7))
