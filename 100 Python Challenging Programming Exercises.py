@@ -1060,12 +1060,6 @@ for num in [2, 4, 6, 8]:
 # Example: If the following string is given as input to the program: 35+3
 # Then, the output of the program should be: 38
 
-def evaluator(n=input("Enter expression to evaluate here : ")):
-    print(eval(n))
-
-
-evaluator()
-
 
 # ##########################################################
 # QUESTION 56
