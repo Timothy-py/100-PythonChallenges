@@ -986,22 +986,6 @@ targeter()
 # 	Example: If the following n is given as input to the program:7
 # 	Then, the output of the program should be: 0,1,1,2,3,5,8,13
 
-def fibonacci(n):
-
-    if n == 0:
-        value = 0
-        return value
-    elif n == 1:
-        value = 1
-        return value
-    elif n > 1:
-        value = fibonacci(n-1) + fibonacci(n-2)
-        return value
-
-
-i = int(input("Enter an integer value here: "))
-print([fibonacci(_) for _ in range(i)])
-
 
 # ###########################################################
 # QUESTION 52
