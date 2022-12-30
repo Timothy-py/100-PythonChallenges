@@ -895,20 +895,6 @@ print(formular())
 # Please write a program to compute the value of f(n) with a given n input by console.
 # If n=7 is given as input to the program: Then, the output should be: 13
 
-def formulae(n=int(input("Enter number here: "))):
-
-    if n == 0:
-        value = 0
-        return value
-    elif n == 1:
-        value = 1
-        return value
-    elif n >= 2:
-        value = formulae(n-1) + formulae(n-2)
-        return value
-
-
-formulae(7)
 
 # ###########################################################
 # QUESTION 50
