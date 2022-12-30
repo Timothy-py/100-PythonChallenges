@@ -873,19 +873,6 @@ formula(5)
 # Example: If the following n is given as input to the program: 5 Then, the output of the program should be: 500
 
 
-def formular(n=int(input("Enter number here : "))):
-
-    if n == 0:
-        value = 1
-        return value
-    elif n > 0:
-        value = formular(n-1) + 100
-        return value
-
-
-print(formular())
-
-
 # ###########################################################
 # QUESTION 49
 # The Fibonacci Sequence is completed based on the following formula:
