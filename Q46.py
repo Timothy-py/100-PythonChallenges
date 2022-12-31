@@ -63,3 +63,10 @@ def pyramid_height(num_blocks):
 print(pyramid_height(4))  # Outputs: 2
 print(pyramid_height(10))  # Outputs: 4
 print(pyramid_height(20))  # Outputs: 7
+
+
+# Explanation:
+
+# We can use a while loop to keep adding layers to the pyramid until we run out of blocks.
+# For each iteration of the loop, we increment the height variable by 1 to represent adding another layer to the pyramid. We also update the blocks_needed variable by adding the current height to it. This keeps track of the total number of blocks needed to build the pyramid up to the current height.
+# Finally, we return height - 1 because the while loop will run one extra time after we have used up all the blocks. This is because the condition num_blocks >= blocks_needed will still be True when num_blocks is equal to blocks_needed. So, we need to subtract 1 from the final value of height to get the correct answer.
