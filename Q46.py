@@ -10,6 +10,7 @@ import math
 # have a sufficient number of blocks and cannot complete the next layer, they finish their work immediately.
 
 
+# SOLUTION 1
 def pyrabuilder(blocks=int(input("Enter the number of blocks you have : "))):
 
     init_pyramid = []
@@ -47,3 +48,18 @@ def pyrabuilder(blocks=int(input("Enter the number of blocks you have : "))):
 
 
 pyrabuilder()
+
+
+# SOLUTION 2
+def pyramid_height(num_blocks):
+    height = 0
+    blocks_needed = 0
+    while num_blocks >= blocks_needed:
+        height += 1
+        blocks_needed += height
+    return height - 1
+
+
+print(pyramid_height(4))  # Outputs: 2
+print(pyramid_height(10))  # Outputs: 4
+print(pyramid_height(20))  # Outputs: 7
