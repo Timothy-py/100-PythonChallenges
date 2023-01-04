@@ -731,31 +731,6 @@ class Xception(Exception):
 # Then, the output of the program should be: john
 # In case of input data being supplied to the question, it should be assumed to be a console input.
 
-
-class NameFinder:
-    def __init__(self):
-        self.email = input("Enter your email here : ")
-
-    def validate_email(self):
-        self.email_regex = re.compile(
-            pattern=r"([A-Za-z]+)(@)([A-Za-z]+)(\.com)")
-        if self.email_regex.match(self.email):
-            return True
-        else:
-            return False
-
-    def name_xtractor(self):
-        if self.validate_email():
-            name = self.email_regex.search(self.email).group(1)
-            print(f"Name = {name}")
-        else:
-            print("Invalid Email")
-
-
-name = NameFinder()
-name.name_xtractor()
-
-
 ####################################################
 # QUESTION 45
 # Write a program which accepts a sequence of words separated by whitespace as input to
