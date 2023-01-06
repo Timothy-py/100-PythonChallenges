@@ -711,16 +711,6 @@ finally:
 # QUESTION 43
 # Define a custom exception class which takes a string message as attribute.
 
-class Xception(Exception):
-    """My custom exception class
-    Attributes:
-    message =  something went wrong
-    """
-
-    def __init__(self, message):
-        self.message = message
-
-
 ####################################################
 # QUESTION 44
 # Assuming that we have some email addresses in the "username@companyname.com" format,
