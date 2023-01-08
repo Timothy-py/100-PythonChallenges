@@ -686,9 +686,6 @@ sq.area()
 # QUESTION 41
 # Pleas raise a RuntimeError exception.
 
-raise RuntimeError("something is fishy")
-
-
 ####################################################
 # QUESTION 42
 # Write a function to compute 5/0 and use try/except to catch the exceptions.
