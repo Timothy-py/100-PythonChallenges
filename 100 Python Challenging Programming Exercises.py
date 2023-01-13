@@ -619,19 +619,6 @@ class NewYorker(American):
 # has a method which can compute the area.
 
 
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
-
-    def calArea(self):
-        area = round(pi * self.radius ** 2, 2)
-        print(f"The area of a circle with radius, {self.radius} = {area}")
-
-
-cir = Circle(5)
-cir.calArea()
-
-
 # ####################################################
 # QUESTION 39
 # Define a class named Rectangle which can be constructed by a length and width.
