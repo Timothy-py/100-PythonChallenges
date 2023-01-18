@@ -10,3 +10,7 @@ def max_s(A, K):
             if s < K and s > max_s:
                 max_s = s
     return max_s
+
+
+# SOlution Discuss
+# This function takes in an array A and an integer K. It initializes a variable max_s to -1 which will store the maximum value of S that satisfies the given condition. It then uses two nested loops to iterate through all pairs of elements in the array. For each pair, it calculates the value of S by adding the two elements and checks if it is less than K and greater than max_s. If it is, it updates the value of max_s. After all pairs have been checked, it returns the final value of max_s, which will be the maximum value of S that satisfies the given condition, or -1 if no such pair exists.
