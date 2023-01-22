@@ -603,15 +603,6 @@ AM.printNationality()
 # QUESTION 37
 # Define a class named American and its subclass NewYorker.
 
-class American:
-    def __init__(self):
-        pass
-
-
-class NewYorker(American):
-    def __init__(self):
-        super.__init__(American)
-
 
 # ####################################################
 # QUESTION 38
