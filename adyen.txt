@@ -1,0 +1,27 @@
+Use the HTPP GET method to retrieve information from a database of restaurant information. Query https://jsonmock.hackerrank.com/api/food_outlets?city=<city> to find all the records. The query result is paginated and can be further accessed by appending to the query sring &page=num where num is the page number.
+
+The response is a JSON object with the following 5 fields:
+
+page: The current page of the results.
+per_page: The maximum number of results returned per page
+total: The total number of results
+data: Either an empty array or an array with a single object that contains the food outlets' records
+
+In data, each food outlet has the following schema:
+
+id: outlet id
+name: The name of the outlet
+city: The city in which the outlet is located
+estimate_cost: The estimate cost of the food in the particular outlet
+user_rating: An object containing the user ratings for the outlet. The object has the following schema:
+    average_rating: The avearge user rating for the outlet 
+    votes: The number of people who voted for the outlet
+
+Given the city name, city, and estimate_cost cost as function arguments, find the food outlet in the city that has the highest rating and whose estimate_cost is at most cost. If there are multiple restaurants that tie for the highest rating, return the one with the lowest expected cost.
+
+Function Description
+Complete the function bestRestaurant
+
+bestRestaurant has the following parameter(s)
+city: name of the city whose outlets have to be  filtered
+estimate_cost: the maximum acceptable estimated cost of an outlet
