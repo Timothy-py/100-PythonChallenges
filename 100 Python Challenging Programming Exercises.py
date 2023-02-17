@@ -475,17 +475,6 @@ func('timothy', 'ayomid')
 # between 1 and 3 (both included) and the values are square of keys.
 
 
-def foo(number):
-    dico = {}
-    dico = dico.fromkeys([num for num in range(1, number+1)])
-    for keys in dico:
-        dico[keys] = keys**2
-    print(dico)
-
-
-foo(3)
-
-
 # #####################################################
 # QUESTION 30
 # With a given tuple(1,2,3,4,5,6,7,8,9,10), write a program to print the first half
