@@ -456,19 +456,6 @@ print(func('3', '4'))
 # should print all strings line by line.
 
 
-def func(str1, str2):
-
-    if len(str1) > len(str2):
-        print(str1)
-    elif len(str2) > len(str1):
-        print(str2)
-    elif len(str1) == len(str2):
-        print(str1)
-        print(str2)
-
-
-func('timothy', 'ayomid')
-
 # ####################################################
 # QUESTION 29
 # Define a function which can print a dictionary where the keys are numbers
