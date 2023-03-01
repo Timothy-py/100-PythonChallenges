@@ -419,13 +419,6 @@ Square.square(6)
 # Define a function that can convert an integer into a string and print it in console.
 
 
-def converter(integer):
-    return str(integer)
-
-
-conv = converter(3)
-print(conv)
-
 # ####################################################
 # QUESTION 26
 # Define a function that can receive two integral numbers in string form and
