@@ -376,13 +376,6 @@ for text in parsed_text:
 # Write a method which can calculate square value of number
 
 
-class Square:
-    def square(number):
-        print(number**2)
-
-
-Square.square(6)
-
 # ###################################################
 # QUESTION 24
 # Write a valid HTML + Python Page that will count numbers from 1 to 1,000,000?
