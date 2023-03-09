@@ -334,21 +334,6 @@ for i in generator(50):
 # RIGHT 2
 # Then, the output of the program should be: 2
 
-
-up = float(input('UP = '))
-down = float(input('DOWN = '))
-left = float(input('LEFT = '))
-right = float(input('RIGHT = '))
-
-up, down, left, right = int(up), int(down), int(left), int(right)
-
-y_axis = up - down
-x_axis = right - left
-
-distance = int(sqrt(y_axis**2 + x_axis**2))
-
-print('Total Distance = %s' % distance)
-
 # ###################################################
 # QUESTION 22
 # Write a program to compute the frequency of the words from the input.
