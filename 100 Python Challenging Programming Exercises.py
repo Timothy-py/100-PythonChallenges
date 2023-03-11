@@ -310,16 +310,6 @@ a = rev_str('timothy')
 # Define a class with a generator which can iterate the numbers,
 # which are divisible by 7, between a given range 0 and n.
 
-def generator(n):
-    for i in range(0, n):
-
-        if i % 7 == 0:
-            yield i
-
-
-for i in generator(50):
-    print(i)
-
 # #############################################
 # QUESTION 21
 # A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT
