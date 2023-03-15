@@ -267,18 +267,6 @@ ABd1234@1
 # Then, the output of the program should be:
 # [('John', '20', '90'), ('Jony', '17', '91'), ('Jony', '17', '93'), ('Json', '21', '85'), ('Tom', '19', '80')]
 
-output_list = []
-while True:
-    data = input('Enter a comma-separated data input here : ')
-
-    if not data:
-        break
-    else:
-        data_split_tuple = tuple(data.split(','))
-        output_list.append(data_split_tuple)
-
-# or just print(sorted(output_list))
-print(sorted(output_list, key=itemgetter(0, 1, 2)))
 
 # ###############################################
 # QUESTION 19
