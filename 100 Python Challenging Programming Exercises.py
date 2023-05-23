@@ -132,27 +132,11 @@ while True:
 # Question 10
 # A program that accepts a sequence of whitespace separated words as input and
 # prints the words after removing all duplicate words and sorting them alphanumerically.
-prompt = input('Enter text strings here: ')
-parsed_text = [word for word in sorted(prompt.split(' '))]
-parsed_word = []
-for word in parsed_text:
-    if word not in parsed_word:
-        parsed_word.append(word)
-
-print(parsed_word)
-''' or use set() on parsed_text instead of the 'for' code suit '''
 
 # ###############################################
 # Question 11
 # A program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether
 # they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
-
-bin_num = input('Enter binary numbers here :')
-bin_num = bin_num.split(',')
-lists = []
-for num in bin_num:
-    if (int(num, 2)) % 5 == 0:
-        print(num, end=',')
 
 # ###############################################
 # Question 12
